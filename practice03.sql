@@ -1,6 +1,6 @@
 /*
 문제1.
-직원들의 사번(employee_id), 이름(firt_name), 성(last_name)과 부서명(department_name) 을 조회하여 
+직원들의 사번(employee_id), 이름(firt_name), 성(last_name)과 부서명(department_name)을 조회하여 
 부서이름(department_name) 오름차순, 사번(employee_id) 내림차순으로 정렬하세요(106건)
 */
 SELECT emp.employee_id, emp.first_name, emp.last_name, 
@@ -10,8 +10,15 @@ WHERE emp.department_id = dept.department_id
 ORDER BY dept.department_name,  -- 오름차순
     emp.employee_id DESC;
 
+--  NATURAL JOIN으로는 불가하다 -> 주의 
+--  employees, departments 테이블은 department_id와 manager_id 공통 필드를 가지고 있다
 SELECT employee_id, first_name, last_name, department_name
 FROM employees NATURAL JOIN departments;    --  Natural JOIN
+-- 아래 쿼리와 동일
+SELECT employee_id, first_name, last_name, dept.department_name
+FROM employees emp, departments dept
+WHERE emp.department_id = dept.department_id AND
+    emp.manager_id = dept.manager_id;
 
 /*
 문제2.
