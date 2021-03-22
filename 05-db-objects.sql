@@ -87,6 +87,25 @@ SELECT * FROM user_views;
 SELECT * FROM book;
 SELECT * FROM author;
         
+----------
+-- INDEX
+----------
+
+-- 레코드 검색 속도 향상을 위한 색인 작업
+--  WHERE 절의 조건에서 사용되는 필드
+--  JOIN의 조건으로 사용되는 필드에 적용하면
+--  검색 속도 향상 가능
+
+
+
+
+
+
+
+
+
+
+
 
 
 
